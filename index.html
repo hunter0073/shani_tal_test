@@ -260,7 +260,7 @@
     /* grid of floating cards */
     .mfr-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
       gap: 22px;
       position: relative;
       z-index: 1;
@@ -270,16 +270,18 @@
       background: rgba(255,255,255,0.07);
       border: 1px solid rgba(255,255,255,0.14);
       backdrop-filter: blur(12px);
-      border-radius: 18px;
-      padding: 26px 20px 22px;
+      border-radius: 14px;
+      padding: 18px 16px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       text-align: center;
-      gap: 14px;
+      gap: 10px;
       cursor: default;
       transition: border-color 0.3s, background 0.3s;
       will-change: transform;
+      min-height: 64px;
     }
 
     /* pause on hover so user can read comfortably */
@@ -336,9 +338,10 @@
     }
 
     .mfr-card .mfr-name {
-      font-size: 14px; font-weight: 700;
+      font-size: 13.5px; font-weight: 700;
       color: rgba(255,255,255,0.95);
-      line-height: 1.25;
+      line-height: 1.3;
+      letter-spacing: 0.2px;
     }
     .mfr-card .mfr-country {
       font-size: 11.5px;
@@ -549,149 +552,130 @@
           <div class="section-label" data-en="Our Global Partners" data-he="השותפים הגלובליים שלנו">Our Global Partners</div>
           <div class="divider"></div>
           <h2 class="section-title" data-en="World-Leading Manufacturers" data-he="יצרנים מובילים בעולם">World-Leading Manufacturers</h2>
-          <p class="section-sub" data-en="We hold exclusive Israeli distribution rights for over 40 international manufacturers. All partners hold FDA or CE certification." data-he="אנו מחזיקים בזכויות הפצה בלעדיות בישראל עבור למעלה מ-40 יצרנים בינלאומיים. כל השותפים מחזיקים באישור FDA או CE."></p>
+          <p class="section-sub" data-en="We hold exclusive Israeli distribution rights for over 115 international manufacturers. All partners hold FDA or CE certification." data-he="אנו מחזיקים בזכויות הפצה בלעדיות בישראל עבור למעלה מ-115 יצרנים בינלאומיים. כל השותפים מחזיקים באישור FDA או CE."></p>
         </div>
         <div class="mfr-count-badge">
-          <span class="big-num">40+</span>
+          <span class="big-num">115+</span>
           <div class="big-label" data-en="Global Partners" data-he="שותפים גלובליים">Global Partners</div>
         </div>
       </div>
 
-      <!-- FLOATING MANUFACTURER CARDS -->
+      <!-- PARTNER NAME BADGES — replace with real logo img when available -->
       <div class="mfr-grid">
-
-        <!-- Richard Wolf -->
-        <div class="mfr-card">
-          <div class="mfr-logo">
-            <img src="logos/richard-wolf.svg" alt="Richard Wolf"
-              onerror="this.parentElement.style.background='linear-gradient(135deg,#c0392b,#922b21)';this.parentElement.style.border='none';this.parentElement.style.padding='0';this.outerHTML='<div class=mfr-logo-text style=color:#fff>RW</div>'">
-          </div>
-          <div class="mfr-name">Richard Wolf GmbH</div>
-          <div class="mfr-country" data-en="Germany" data-he="גרמניה">Germany</div>
-          <div class="mfr-tag" data-en="Endoscopy · MIS" data-he="אנדוסקופיה · ניתוחים זעיר-פולשניים">Endoscopy · MIS</div>
-        </div>
-
-        <!-- Fujinon / Fujifilm -->
-        <div class="mfr-card">
-          <div class="mfr-logo">
-            <img src="logos/fujinon.svg" alt="Fujinon"
-              onerror="this.parentElement.style.background='linear-gradient(135deg,#1a7f4b,#15683d)';this.parentElement.style.border='none';this.parentElement.style.padding='0';this.outerHTML='<div class=mfr-logo-text style=color:#fff>FJ</div>'">
-          </div>
-          <div class="mfr-name">Fujinon</div>
-          <div class="mfr-country" data-en="Japan / Germany" data-he="יפן / גרמניה">Japan / Germany</div>
-          <div class="mfr-tag" data-en="Gastro Endoscopy" data-he="אנדוסקופיה גסטרו">Gastro Endoscopy</div>
-        </div>
-
-        <!-- MTW Endoskopie -->
-        <div class="mfr-card">
-          <div class="mfr-logo">
-            <img src="logos/mtw.svg" alt="MTW Endoskopie"
-              onerror="this.parentElement.style.background='linear-gradient(135deg,#2471a3,#1a5276)';this.parentElement.style.border='none';this.parentElement.style.padding='0';this.outerHTML='<div class=mfr-logo-text style=color:#fff>MTW</div>'">
-          </div>
-          <div class="mfr-name">MTW Endoskopie</div>
-          <div class="mfr-country" data-en="Germany" data-he="גרמניה">Germany</div>
-          <div class="mfr-tag" data-en="GI Disposables" data-he="חד-פעמי לגסטרו">GI Disposables</div>
-        </div>
-
-        <!-- Ackermann Instrument -->
-        <div class="mfr-card">
-          <div class="mfr-logo">
-            <img src="logos/ackermann.svg" alt="Ackermann Instrument"
-              onerror="this.parentElement.style.background='linear-gradient(135deg,#d68910,#b7770d)';this.parentElement.style.border='none';this.parentElement.style.padding='0';this.outerHTML='<div class=mfr-logo-text style=color:#fff>AI</div>'">
-          </div>
-          <div class="mfr-name">Ackermann Instrument</div>
-          <div class="mfr-country" data-en="Germany" data-he="גרמניה">Germany</div>
-          <div class="mfr-tag" data-en="Laparoscopy" data-he="לפרוסקופיה">Laparoscopy</div>
-        </div>
-
-        <!-- B&K Medical -->
-        <div class="mfr-card">
-          <div class="mfr-logo">
-            <img src="logos/bk-medical.svg" alt="B&K Medical"
-              onerror="this.parentElement.style.background='linear-gradient(135deg,#0e8a7a,#0a6b5e)';this.parentElement.style.border='none';this.parentElement.style.padding='0';this.outerHTML='<div class=mfr-logo-text style=color:#fff>B&amp;K</div>'">
-          </div>
-          <div class="mfr-name">B&amp;K Medical</div>
-          <div class="mfr-country" data-en="Denmark" data-he="דנמרק">Denmark</div>
-          <div class="mfr-tag" data-en="Ultrasound" data-he="אולטרסאונד">Ultrasound</div>
-        </div>
-
-        <!-- Cynosure -->
-        <div class="mfr-card">
-          <div class="mfr-logo">
-            <img src="logos/cynosure.svg" alt="Cynosure"
-              onerror="this.parentElement.style.background='linear-gradient(135deg,#7d3c98,#6c3483)';this.parentElement.style.border='none';this.parentElement.style.padding='0';this.outerHTML='<div class=mfr-logo-text style=color:#fff>CY</div>'">
-          </div>
-          <div class="mfr-name">Cynosure</div>
-          <div class="mfr-country" data-en="USA" data-he="ארה״ב">USA</div>
-          <div class="mfr-tag" data-en="Laser Equipment" data-he="ציוד לייזר">Laser Equipment</div>
-        </div>
-
-        <!-- Life Tech -->
-        <div class="mfr-card">
-          <div class="mfr-logo">
-            <img src="logos/life-tech.svg" alt="Life Tech"
-              onerror="this.parentElement.style.background='linear-gradient(135deg,#117a8b,#0c5f6e)';this.parentElement.style.border='none';this.parentElement.style.padding='0';this.outerHTML='<div class=mfr-logo-text style=color:#fff>LT</div>'">
-          </div>
-          <div class="mfr-name">Life Tech</div>
-          <div class="mfr-country" data-en="USA" data-he="ארה״ב">USA</div>
-          <div class="mfr-tag" data-en="Urology Systems" data-he="מערכות אורולוגיה">Urology Systems</div>
-        </div>
-
-        <!-- Medwork -->
-        <div class="mfr-card">
-          <div class="mfr-logo">
-            <img src="logos/medwork.svg" alt="Medwork"
-              onerror="this.parentElement.style.background='linear-gradient(135deg,#1f618d,#1a4f73)';this.parentElement.style.border='none';this.parentElement.style.padding='0';this.outerHTML='<div class=mfr-logo-text style=color:#fff>MW</div>'">
-          </div>
-          <div class="mfr-name">Medwork</div>
-          <div class="mfr-country" data-en="Germany" data-he="גרמניה">Germany</div>
-          <div class="mfr-tag" data-en="GI Disposables" data-he="חד-פעמי לגסטרו">GI Disposables</div>
-        </div>
-
-        <!-- Sunoptic Technologies -->
-        <div class="mfr-card">
-          <div class="mfr-logo">
-            <img src="logos/sunoptic.svg" alt="Sunoptic Technologies"
-              onerror="this.parentElement.style.background='linear-gradient(135deg,#d4a017,#b8860b)';this.parentElement.style.border='none';this.parentElement.style.padding='0';this.outerHTML='<div class=mfr-logo-text style=color:#fff>SUN</div>'">
-          </div>
-          <div class="mfr-name">Sunoptic Technologies</div>
-          <div class="mfr-country" data-en="USA" data-he="ארה״ב">USA</div>
-          <div class="mfr-tag" data-en="Surgical Lighting" data-he="תאורה כירורגית">Surgical Lighting</div>
-        </div>
-
-        <!-- Medivision -->
-        <div class="mfr-card">
-          <div class="mfr-logo">
-            <img src="logos/medivision.svg" alt="Medivision"
-              onerror="this.parentElement.style.background='linear-gradient(135deg,#2e4b9e,#1e3580)';this.parentElement.style.border='none';this.parentElement.style.padding='0';this.outerHTML='<div class=mfr-logo-text style=color:#fff>MV</div>'">
-          </div>
-          <div class="mfr-name">Medivision</div>
-          <div class="mfr-country" data-en="USA" data-he="ארה״ב">USA</div>
-          <div class="mfr-tag" data-en="Surgical Monitors" data-he="מוניטורים כירורגיים">Surgical Monitors</div>
-        </div>
-
-        <!-- Life Optic -->
-        <div class="mfr-card">
-          <div class="mfr-logo">
-            <img src="logos/life-optic.svg" alt="Life Optic"
-              onerror="this.parentElement.style.background='linear-gradient(135deg,#148f77,#0e6655)';this.parentElement.style.border='none';this.parentElement.style.padding='0';this.outerHTML='<div class=mfr-logo-text style=color:#fff>LO</div>'">
-          </div>
-          <div class="mfr-name">Life Optic</div>
-          <div class="mfr-country" data-en="Austria" data-he="אוסטריה">Austria</div>
-          <div class="mfr-tag" data-en="Surgical Loupes" data-he="עדשות כירורגיות">Surgical Loupes</div>
-        </div>
-
-        <!-- Medicart -->
-        <div class="mfr-card">
-          <div class="mfr-logo">
-            <img src="logos/medicart.svg" alt="Medicart"
-              onerror="this.parentElement.style.background='linear-gradient(135deg,#5b2333,#922b45)';this.parentElement.style.border='none';this.parentElement.style.padding='0';this.outerHTML='<div class=mfr-logo-text style=color:#fff>MC</div>'">
-          </div>
-          <div class="mfr-name">Medicart</div>
-          <div class="mfr-country" data-en="England" data-he="אנגליה">England</div>
-          <div class="mfr-tag" data-en="Medical Trolleys" data-he="עגלות רפואיות">Medical Trolleys</div>
-        </div>
-
+        <div class="mfr-card"><div class="mfr-name">Ackermann</div></div>
+        <div class="mfr-card"><div class="mfr-name">Albyn</div></div>
+        <div class="mfr-card"><div class="mfr-name">All Medicus</div></div>
+        <div class="mfr-card"><div class="mfr-name">Allwin</div></div>
+        <div class="mfr-card"><div class="mfr-name">AMG</div></div>
+        <div class="mfr-card"><div class="mfr-name">Angiotech Switzerland SA</div></div>
+        <div class="mfr-card"><div class="mfr-name">Anios</div></div>
+        <div class="mfr-card"><div class="mfr-name">Argon</div></div>
+        <div class="mfr-card"><div class="mfr-name">ATS</div></div>
+        <div class="mfr-card"><div class="mfr-name">B &amp; K</div></div>
+        <div class="mfr-card"><div class="mfr-name">BCM</div></div>
+        <div class="mfr-card"><div class="mfr-name">Bovie</div></div>
+        <div class="mfr-card"><div class="mfr-name">Bowa</div></div>
+        <div class="mfr-card"><div class="mfr-name">Buhler</div></div>
+        <div class="mfr-card"><div class="mfr-name">Bulbtronics</div></div>
+        <div class="mfr-card"><div class="mfr-name">Byrne</div></div>
+        <div class="mfr-card"><div class="mfr-name">Cantel Medical</div></div>
+        <div class="mfr-card"><div class="mfr-name">Caresono</div></div>
+        <div class="mfr-card"><div class="mfr-name">CBC</div></div>
+        <div class="mfr-card"><div class="mfr-name">Ceracarta</div></div>
+        <div class="mfr-card"><div class="mfr-name">Civco</div></div>
+        <div class="mfr-card"><div class="mfr-name">Cogentix</div></div>
+        <div class="mfr-card"><div class="mfr-name">Create Medic</div></div>
+        <div class="mfr-card"><div class="mfr-name">CTE</div></div>
+        <div class="mfr-card"><div class="mfr-name">Cuda</div></div>
+        <div class="mfr-card"><div class="mfr-name">Curon</div></div>
+        <div class="mfr-card"><div class="mfr-name">Cynosure</div></div>
+        <div class="mfr-card"><div class="mfr-name">Dalian</div></div>
+        <div class="mfr-card"><div class="mfr-name">DDC</div></div>
+        <div class="mfr-card"><div class="mfr-name">Diemme</div></div>
+        <div class="mfr-card"><div class="mfr-name">DP Medimaging</div></div>
+        <div class="mfr-card"><div class="mfr-name">DSV</div></div>
+        <div class="mfr-card"><div class="mfr-name">Ecolab</div></div>
+        <div class="mfr-card"><div class="mfr-name">Ella</div></div>
+        <div class="mfr-card"><div class="mfr-name">Elma</div></div>
+        <div class="mfr-card"><div class="mfr-name">Elvation</div></div>
+        <div class="mfr-card"><div class="mfr-name">Emcision</div></div>
+        <div class="mfr-card"><div class="mfr-name">Emerson</div></div>
+        <div class="mfr-card"><div class="mfr-name">Endalis</div></div>
+        <div class="mfr-card"><div class="mfr-name">Endo Technik</div></div>
+        <div class="mfr-card"><div class="mfr-name">Esaote</div></div>
+        <div class="mfr-card"><div class="mfr-name">FMS</div></div>
+        <div class="mfr-card"><div class="mfr-name">Fujifilm</div></div>
+        <div class="mfr-card"><div class="mfr-name">Gierth</div></div>
+        <div class="mfr-card"><div class="mfr-name">Haemoband</div></div>
+        <div class="mfr-card"><div class="mfr-name">Heinz Herenz</div></div>
+        <div class="mfr-card"><div class="mfr-name">Intelligent Endoscopy</div></div>
+        <div class="mfr-card"><div class="mfr-name">Laborie</div></div>
+        <div class="mfr-card"><div class="mfr-name">Labotech</div></div>
+        <div class="mfr-card"><div class="mfr-name">Lemke</div></div>
+        <div class="mfr-card"><div class="mfr-name">Liarre</div></div>
+        <div class="mfr-card"><div class="mfr-name">Life Optics</div></div>
+        <div class="mfr-card"><div class="mfr-name">Life Partner Europe</div></div>
+        <div class="mfr-card"><div class="mfr-name">Life Tech</div></div>
+        <div class="mfr-card"><div class="mfr-name">M.A.S Medical Srl</div></div>
+        <div class="mfr-card"><div class="mfr-name">M.D.L. Srl</div></div>
+        <div class="mfr-card"><div class="mfr-name">Marflow</div></div>
+        <div class="mfr-card"><div class="mfr-name">MDT X-Ray</div></div>
+        <div class="mfr-card"><div class="mfr-name">MDTech</div></div>
+        <div class="mfr-card"><div class="mfr-name">Medgic</div></div>
+        <div class="mfr-card"><div class="mfr-name">Medical Innovations</div></div>
+        <div class="mfr-card"><div class="mfr-name">Medicapture</div></div>
+        <div class="mfr-card"><div class="mfr-name">Medicart</div></div>
+        <div class="mfr-card"><div class="mfr-name">Mediplus</div></div>
+        <div class="mfr-card"><div class="mfr-name">Medkocult</div></div>
+        <div class="mfr-card"><div class="mfr-name">Medkonsult</div></div>
+        <div class="mfr-card"><div class="mfr-name">Mednova</div></div>
+        <div class="mfr-card"><div class="mfr-name">Medwork</div></div>
+        <div class="mfr-card"><div class="mfr-name">MIC</div></div>
+        <div class="mfr-card"><div class="mfr-name">Micro Tech</div></div>
+        <div class="mfr-card"><div class="mfr-name">Mindray</div></div>
+        <div class="mfr-card"><div class="mfr-name">Minntech</div></div>
+        <div class="mfr-card"><div class="mfr-name">Mitech</div></div>
+        <div class="mfr-card"><div class="mfr-name">Moller</div></div>
+        <div class="mfr-card"><div class="mfr-name">Morton Medical</div></div>
+        <div class="mfr-card"><div class="mfr-name">MTW</div></div>
+        <div class="mfr-card"><div class="mfr-name">Neomedic</div></div>
+        <div class="mfr-card"><div class="mfr-name">Neurodx</div></div>
+        <div class="mfr-card"><div class="mfr-name">OnDemand Soft</div></div>
+        <div class="mfr-card"><div class="mfr-name">OTU Medical</div></div>
+        <div class="mfr-card"><div class="mfr-name">Ovesco</div></div>
+        <div class="mfr-card"><div class="mfr-name">Pan Medical</div></div>
+        <div class="mfr-card"><div class="mfr-name">PBN</div></div>
+        <div class="mfr-card"><div class="mfr-name">Perouse Medical</div></div>
+        <div class="mfr-card"><div class="mfr-name">Pie Medical</div></div>
+        <div class="mfr-card"><div class="mfr-name">Pusen</div></div>
+        <div class="mfr-card"><div class="mfr-name">Quill</div></div>
+        <div class="mfr-card"><div class="mfr-name">Raymond Chatanay</div></div>
+        <div class="mfr-card"><div class="mfr-name">Riwo Spine</div></div>
+        <div class="mfr-card"><div class="mfr-name">RMS</div></div>
+        <div class="mfr-card"><div class="mfr-name">Rocket</div></div>
+        <div class="mfr-card"><div class="mfr-name">SaniSwiss</div></div>
+        <div class="mfr-card"><div class="mfr-name">Shandong Xinhua</div></div>
+        <div class="mfr-card"><div class="mfr-name">Sharn</div></div>
+        <div class="mfr-card"><div class="mfr-name">Sharpbluster</div></div>
+        <div class="mfr-card"><div class="mfr-name">Shuntcheck</div></div>
+        <div class="mfr-card"><div class="mfr-name">Soluscope</div></div>
+        <div class="mfr-card"><div class="mfr-name">Sonodyn</div></div>
+        <div class="mfr-card"><div class="mfr-name">Sony</div></div>
+        <div class="mfr-card"><div class="mfr-name">Steris</div></div>
+        <div class="mfr-card"><div class="mfr-name">Stihler</div></div>
+        <div class="mfr-card"><div class="mfr-name">Sun Optic</div></div>
+        <div class="mfr-card"><div class="mfr-name">Sunlight</div></div>
+        <div class="mfr-card"><div class="mfr-name">Sunmed</div></div>
+        <div class="mfr-card"><div class="mfr-name">Synoptics</div></div>
+        <div class="mfr-card"><div class="mfr-name">The Standard</div></div>
+        <div class="mfr-card"><div class="mfr-name">THT</div></div>
+        <div class="mfr-card"><div class="mfr-name">Treier</div></div>
+        <div class="mfr-card"><div class="mfr-name">TWSC</div></div>
+        <div class="mfr-card"><div class="mfr-name">Urotech</div></div>
+        <div class="mfr-card"><div class="mfr-name">US Endoscopy</div></div>
+        <div class="mfr-card"><div class="mfr-name">Wolf</div></div>
+        <div class="mfr-card"><div class="mfr-name">Zephyr</div></div>
+        <div class="mfr-card"><div class="mfr-name">ZVI Wealth Experts AG</div></div>
       </div><!-- /mfr-grid -->
 
       <p class="mfr-more" data-en="…and many more exclusive brands. We welcome inquiries from FDA / CE certified manufacturers seeking Israeli representation." data-he="…ועוד מותגים בלעדיים רבים. אנו מברכים על פניות מיצרנים בעלי אישור FDA / CE המחפשים ייצוג בישראל."></p>
