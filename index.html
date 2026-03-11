@@ -243,100 +243,96 @@
     .mfr-count-badge .big-num  { font-size: 56px; font-weight: 700; color: var(--white); line-height: 1; display: block; }
     .mfr-count-badge .big-label { font-size: 11px; opacity: 0.65; text-transform: uppercase; letter-spacing: 1.5px; margin-top: 8px; color: var(--white); }
 
-    /* ── Float keyframes ── */
-    @keyframes floatA {
-      0%, 100% { transform: translateY(0px);   box-shadow: 0 8px 32px rgba(0,0,0,0.35); }
-      50%       { transform: translateY(-11px); box-shadow: 0 20px 48px rgba(0,0,0,0.45); }
-    }
-    @keyframes floatB {
-      0%, 100% { transform: translateY(0px);   box-shadow: 0 8px 32px rgba(0,0,0,0.35); }
-      50%       { transform: translateY(-8px);  box-shadow: 0 18px 44px rgba(0,0,0,0.42); }
-    }
-    @keyframes floatC {
-      0%, 100% { transform: translateY(0px);   box-shadow: 0 8px 32px rgba(0,0,0,0.35); }
-      50%       { transform: translateY(-14px); box-shadow: 0 22px 52px rgba(0,0,0,0.48); }
-    }
-
-    /* grid of floating cards */
-    .mfr-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: 22px;
+    /* ── Orbital animation ── */
+    .orbit-scene {
       position: relative;
-      z-index: 1;
+      width: 580px;
+      height: 580px;
+      margin: 48px auto 0;
     }
+    .orbit-center-glow {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #fff 0%, rgba(120,180,255,0.9) 50%, transparent 100%);
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 24px 8px rgba(120,180,255,0.45);
+      animation: center-pulse 3s ease-in-out infinite;
+    }
+    @keyframes center-pulse {
+      0%, 100% { box-shadow: 0 0 16px 6px rgba(120,180,255,0.3); }
+      50%       { box-shadow: 0 0 40px 16px rgba(120,180,255,0.6); }
+    }
+    .orbit-ring {
+      position: absolute;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 50%;
+    }
+    .orbit-arm {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 0; height: 0;
+      animation: orbit-spin linear infinite;
+      animation-delay: var(--delay, 0s);
+    }
+    .o-inner  { animation-duration: 7s; }
+    .o-middle { animation-duration: 12s; }
+    .o-outer  { animation-duration: 18s; }
+    @keyframes orbit-spin { to { transform: rotate(360deg); } }
 
-    .mfr-card {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.14);
-      backdrop-filter: blur(12px);
-      border-radius: 14px;
-      padding: 18px 16px;
+    .orbit-card {
+      position: absolute;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      gap: 10px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.18);
+      backdrop-filter: blur(10px);
+      border-radius: 14px;
+      padding: 8px 12px;
       cursor: default;
-      transition: border-color 0.3s, background 0.3s;
-      will-change: transform;
-      min-height: 64px;
+      transition: background 0.3s, border-color 0.3s;
+      animation: linear infinite;
+      animation-delay: var(--delay, 0s);
     }
-
-    /* ── Featured / highlighted partner cards ── */
-    .mfr-card.mfr-featured {
-      background: rgba(255, 215, 100, 0.13);
-      border: 1.5px solid rgba(255, 210, 80, 0.55);
-      box-shadow: 0 0 18px rgba(255, 200, 60, 0.18);
+    .c-inner  { width: 80px; height: 54px; animation-name: counter-inner;  animation-duration: 7s; }
+    .c-middle { width: 84px; height: 58px; animation-name: counter-middle; animation-duration: 12s; }
+    .c-outer  { width: 84px; height: 58px; animation-name: counter-outer;  animation-duration: 18s; }
+    @keyframes counter-inner  {
+      from { transform: translateX(110px) translateY(-50%) rotate(0deg);    }
+      to   { transform: translateX(110px) translateY(-50%) rotate(-360deg); }
     }
-    .mfr-card.mfr-featured .mfr-name {
-      color: #ffe97a;
-      font-size: 14px;
+    @keyframes counter-middle {
+      from { transform: translateX(190px) translateY(-50%) rotate(0deg);    }
+      to   { transform: translateX(190px) translateY(-50%) rotate(-360deg); }
     }
-    .mfr-card.mfr-featured:hover {
-      background: rgba(255, 215, 100, 0.22);
-      border-color: rgba(255, 210, 80, 0.85);
-      box-shadow: 0 0 28px rgba(255, 200, 60, 0.32);
+    @keyframes counter-outer  {
+      from { transform: translateX(270px) translateY(-50%) rotate(0deg);    }
+      to   { transform: translateX(270px) translateY(-50%) rotate(-360deg); }
     }
-
-    .mfr-card img {
+    .orbit-card img {
       max-width: 100%;
-      max-height: 70px;
-      width: auto;
-      height: auto;
+      max-height: 36px;
+      width: auto; height: auto;
       object-fit: contain;
       filter: brightness(0) invert(1);
-      opacity: 0.85;
+      opacity: 0.82;
       transition: opacity 0.3s;
+      pointer-events: none;
     }
-    .mfr-card:hover img { opacity: 1; }
-
-    /* pause on hover so user can read comfortably */
-    .mfr-card:hover {
-      animation-play-state: paused !important;
-      background: rgba(255,255,255,0.13);
-      border-color: rgba(255,255,255,0.32);
+    .orbit-card:hover {
+      background: rgba(255,255,255,0.15);
+      border-color: rgba(255,255,255,0.4);
     }
-
-    /* staggered float assignments */
-    .mfr-card:nth-child(3n+1) { animation: floatA 4.2s ease-in-out infinite; }
-    .mfr-card:nth-child(3n+2) { animation: floatB 5.0s ease-in-out infinite; }
-    .mfr-card:nth-child(3n+3) { animation: floatC 3.8s ease-in-out infinite; }
-
-    /* individual delays so they're all out of phase */
-    .mfr-card:nth-child(1)  { animation-delay: 0.0s; }
-    .mfr-card:nth-child(2)  { animation-delay: 0.5s; }
-    .mfr-card:nth-child(3)  { animation-delay: 1.0s; }
-    .mfr-card:nth-child(4)  { animation-delay: 1.5s; }
-    .mfr-card:nth-child(5)  { animation-delay: 0.8s; }
-    .mfr-card:nth-child(6)  { animation-delay: 0.3s; }
-    .mfr-card:nth-child(7)  { animation-delay: 1.2s; }
-    .mfr-card:nth-child(8)  { animation-delay: 0.6s; }
-    .mfr-card:nth-child(9)  { animation-delay: 1.8s; }
-    .mfr-card:nth-child(10) { animation-delay: 0.1s; }
-    .mfr-card:nth-child(11) { animation-delay: 1.4s; }
-    .mfr-card:nth-child(12) { animation-delay: 0.9s; }
+    .orbit-card:hover img { opacity: 1; }
+    @media (max-width: 660px) {
+      .orbit-scene {
+        transform: scale(0.55);
+        transform-origin: top center;
+        margin-bottom: calc(-580px * 0.45);
+      }
+    }
 
     /* ── Manufacturer logo badge ── */
     .mfr-logo {
@@ -588,19 +584,27 @@
         </div>
       </div>
 
-      <!-- PARTNER LOGOS -->
-      <div class="mfr-grid">
-        <div class="mfr-card"><img src="logos/anios.png"         alt="Anios"></div>
-        <div class="mfr-card"><img src="logos/creo_medical.png"  alt="Creo Medical"></div>
-        <div class="mfr-card"><img src="logos/ecolab.jfif"       alt="Ecolab"></div>
-        <div class="mfr-card"><img src="logos/fuji.jfif"         alt="Fujifilm"></div>
-        <div class="mfr-card"><img src="logos/medivators.avif"   alt="Medivators"></div>
-        <div class="mfr-card"><img src="logos/mindray.jpg"       alt="Mindray"></div>
-        <div class="mfr-card"><img src="logos/moller.png"        alt="Moller"></div>
-        <div class="mfr-card"><img src="logos/richard_wolf.avif" alt="Richard Wolf"></div>
-        <div class="mfr-card"><img src="logos/soluscope.jfif"    alt="Soluscope"></div>
-        <div class="mfr-card"><img src="logos/sony.png"          alt="Sony"></div>
-      </div><!-- /mfr-grid -->
+      <!-- PARTNER LOGOS — orbital system -->
+      <div class="orbit-scene">
+        <div class="orbit-center-glow"></div>
+        <!-- orbit ring guides -->
+        <div class="orbit-ring" style="width:220px;height:220px;top:calc(50% - 110px);left:calc(50% - 110px)"></div>
+        <div class="orbit-ring" style="width:380px;height:380px;top:calc(50% - 190px);left:calc(50% - 190px)"></div>
+        <div class="orbit-ring" style="width:540px;height:540px;top:calc(50% - 270px);left:calc(50% - 270px)"></div>
+        <!-- inner orbit: 3 logos -->
+        <div class="orbit-arm o-inner" style="--delay:0s">   <div class="orbit-card c-inner"><img src="logos/anios.png"        alt="Anios"></div></div>
+        <div class="orbit-arm o-inner" style="--delay:-2.33s"><div class="orbit-card c-inner"><img src="logos/creo_medical.png" alt="Creo Medical"></div></div>
+        <div class="orbit-arm o-inner" style="--delay:-4.67s"><div class="orbit-card c-inner"><img src="logos/ecolab.jfif"      alt="Ecolab"></div></div>
+        <!-- middle orbit: 4 logos -->
+        <div class="orbit-arm o-middle" style="--delay:0s">  <div class="orbit-card c-middle"><img src="logos/fuji.jfif"          alt="Fujifilm"></div></div>
+        <div class="orbit-arm o-middle" style="--delay:-3s"> <div class="orbit-card c-middle"><img src="logos/medivators.avif"    alt="Medivators"></div></div>
+        <div class="orbit-arm o-middle" style="--delay:-6s"> <div class="orbit-card c-middle"><img src="logos/mindray.jpg"        alt="Mindray"></div></div>
+        <div class="orbit-arm o-middle" style="--delay:-9s"> <div class="orbit-card c-middle"><img src="logos/moller.png"         alt="Moller"></div></div>
+        <!-- outer orbit: 3 logos -->
+        <div class="orbit-arm o-outer" style="--delay:0s">   <div class="orbit-card c-outer"><img src="logos/richard_wolf.avif" alt="Richard Wolf"></div></div>
+        <div class="orbit-arm o-outer" style="--delay:-6s">  <div class="orbit-card c-outer"><img src="logos/soluscope.jfif"    alt="Soluscope"></div></div>
+        <div class="orbit-arm o-outer" style="--delay:-12s"> <div class="orbit-card c-outer"><img src="logos/sony.png"           alt="Sony"></div></div>
+      </div><!-- /orbit-scene -->
 
       <p class="mfr-more" data-en="…and many more exclusive brands. We welcome inquiries from FDA / CE certified manufacturers seeking Israeli representation." data-he="…ועוד מותגים בלעדיים רבים. אנו מברכים על פניות מיצרנים בעלי אישור FDA / CE המחפשים ייצוג בישראל."></p>
     </div>
