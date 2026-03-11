@@ -300,6 +300,18 @@
       box-shadow: 0 0 28px rgba(255, 200, 60, 0.32);
     }
 
+    .mfr-card img {
+      max-width: 100%;
+      max-height: 70px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+      opacity: 0.85;
+      transition: opacity 0.3s;
+    }
+    .mfr-card:hover img { opacity: 1; }
+
     /* pause on hover so user can read comfortably */
     .mfr-card:hover {
       animation-play-state: paused !important;
@@ -578,18 +590,16 @@
 
       <!-- PARTNER LOGOS -->
       <div class="mfr-grid">
-        <div class="mfr-card"><img src="logos/ackermann.svg"    alt="Ackermann"></div>
-        <div class="mfr-card"><img src="logos/bk-medical.svg"   alt="B&amp;K Medical"></div>
-        <div class="mfr-card"><img src="logos/cynosure.svg"     alt="Cynosure"></div>
-        <div class="mfr-card"><img src="logos/fujinon.svg"      alt="Fujinon"></div>
-        <div class="mfr-card"><img src="logos/life-optic.svg"   alt="Life Optic"></div>
-        <div class="mfr-card"><img src="logos/life-tech.svg"    alt="Life Tech"></div>
-        <div class="mfr-card"><img src="logos/medicart.svg"     alt="Medicart"></div>
-        <div class="mfr-card"><img src="logos/medivision.svg"   alt="Medivision"></div>
-        <div class="mfr-card"><img src="logos/medwork.svg"      alt="Medwork"></div>
-        <div class="mfr-card"><img src="logos/mtw.svg"          alt="MTW"></div>
-        <div class="mfr-card"><img src="logos/richard-wolf.svg" alt="Richard Wolf"></div>
-        <div class="mfr-card"><img src="logos/sunoptic.svg"     alt="Sun Optic"></div>
+        <div class="mfr-card"><img src="logos/anios.png"         alt="Anios"></div>
+        <div class="mfr-card"><img src="logos/creo_medical.png"  alt="Creo Medical"></div>
+        <div class="mfr-card"><img src="logos/ecolab.jfif"       alt="Ecolab"></div>
+        <div class="mfr-card"><img src="logos/fuji.jfif"         alt="Fujifilm"></div>
+        <div class="mfr-card"><img src="logos/medivators.avif"   alt="Medivators"></div>
+        <div class="mfr-card"><img src="logos/mindray.jpg"       alt="Mindray"></div>
+        <div class="mfr-card"><img src="logos/moller.png"        alt="Moller"></div>
+        <div class="mfr-card"><img src="logos/richard_wolf.avif" alt="Richard Wolf"></div>
+        <div class="mfr-card"><img src="logos/soluscope.jfif"    alt="Soluscope"></div>
+        <div class="mfr-card"><img src="logos/sony.png"          alt="Sony"></div>
       </div><!-- /mfr-grid -->
 
       <p class="mfr-more" data-en="…and many more exclusive brands. We welcome inquiries from FDA / CE certified manufacturers seeking Israeli representation." data-he="…ועוד מותגים בלעדיים רבים. אנו מברכים על פניות מיצרנים בעלי אישור FDA / CE המחפשים ייצוג בישראל."></p>
