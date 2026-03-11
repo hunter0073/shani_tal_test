@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80">
+  <rect width="200" height="80" fill="#fff"/>
+  <!-- Loupe / binocular icon -->
+  <g transform="translate(6,14)">
+    <circle cx="16" cy="26" r="12" stroke="#148f77" stroke-width="3" fill="none"/>
+    <circle cx="40" cy="26" r="12" stroke="#148f77" stroke-width="3" fill="none"/>
+    <line x1="16" y1="14" x2="16" y2="8"  stroke="#148f77" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="40" y1="14" x2="40" y2="8"  stroke="#148f77" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="16" y1="8"  x2="40" y2="8"  stroke="#148f77" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="16" cy="26" r="4" fill="#148f77" opacity="0.2"/>
+    <circle cx="40" cy="26" r="4" fill="#148f77" opacity="0.2"/>
+  </g>
+  <text x="68" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#148f77">Life <tspan font-weight="300" fill="#333">Optic</tspan></text>
+  <text x="68" y="49" font-family="Arial, sans-serif" font-size="8.5" fill="#888" letter-spacing="0.8">SURGICAL LOUPES · AUSTRIA</text>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80">
+  <rect width="200" height="80" fill="#fff"/>
+  <!-- Cynosure C arc mark -->
+  <g transform="translate(10,10)">
+    <path d="M45 30 A25 25 0 1 0 45 32" stroke="#7d3c98" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <!-- laser dot -->
+    <circle cx="46" cy="10" r="4" fill="#e74c3c"/>
+  </g>
+  <text x="78" y="36" font-family="Georgia, serif" font-size="20" font-weight="700" fill="#7d3c98" letter-spacing="-0.3">Cynosure</text>
+  <text x="78" y="53" font-family="Arial, sans-serif" font-size="8.5" fill="#888" letter-spacing="0.8">LASER AESTHETICS · USA</text>
+</svg>
