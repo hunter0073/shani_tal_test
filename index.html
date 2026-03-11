@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shani Tal Marketing | שני טל שיווק</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ── RESET & BASE ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #0c2461;
+      --navy-mid:   #1e3799;
+      --navy-light: #4a6fa5;
+      --sky:        #d6e4f7;
+      --accent:     #1e5faa;
+      --white:      #ffffff;
+      --off-white:  #f4f7fc;
+      --border:     #d0dded;
+      --text-main:  #0c2461;
+      --text-muted: #4a6fa5;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      color: var(--text-main);
+      background: var(--white);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    html[lang="he"] body {
+      font-family: 'Segoe UI', 'Arial Hebrew', Arial, sans-serif;
+    }
+
+    /* ── LANGUAGE TOGGLE ── */
+    .lang-bar {
+      background: var(--navy);
+      display: flex;
+      justify-content: flex-end;
+      padding: 8px 40px;
+    }
+    html[dir="rtl"] .lang-bar { justify-content: flex-start; }
+
+    .lang-btn {
+      background: transparent;
+      border: 1.5px solid rgba(255,255,255,0.5);
+      color: rgba(255,255,255,0.85);
+      padding: 4px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      letter-spacing: 0.5px;
+      transition: all 0.2s;
+    }
+    .lang-btn:hover {
+      background: rgba(255,255,255,0.15);
+      border-color: var(--white);
+      color: var(--white);
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(12,36,97,0.07);
+    }
+
+    .logo-area { display: flex; align-items: center; gap: 18px; }
+
+    /* Real logo image (shown when file provided) */
+    .logo-img { height: 56px; width: auto; display: block; }
+
+    /* Placeholder (shown when no image) */
+    .logo-placeholder { display: flex; align-items: center; gap: 12px; }
+    .logo-icon {
+      width: 50px; height: 50px;
+      background: var(--navy);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .logo-icon svg { width: 28px; height: 28px; fill: var(--white); }
+    .logo-text-group { line-height: 1.2; }
+    .logo-name-en { font-size: 19px; font-weight: 700; color: var(--navy); letter-spacing: -0.3px; }
+    .logo-name-he { font-size: 15px; font-weight: 600; color: var(--navy-light); font-family: 'Segoe UI', 'Arial Hebrew', Arial, sans-serif; }
+
+    nav { display: flex; gap: 28px; }
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px; font-weight: 500;
+      letter-spacing: 0.3px;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--navy); }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, var(--accent) 100%);
+      color: var(--white);
+      padding: 90px 40px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-inner { position: relative; max-width: 780px; margin: 0 auto; }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 20px;
+      padding: 5px 18px;
+      font-size: 13px; letter-spacing: 1px;
+      text-transform: uppercase; font-weight: 500;
+      margin-bottom: 22px;
+    }
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 700; line-height: 1.15;
+      margin-bottom: 20px; letter-spacing: -0.5px;
+    }
+    .hero p {
+      font-size: clamp(15px, 2vw, 18px);
+      opacity: 0.88; max-width: 620px;
+      margin: 0 auto 36px; font-weight: 300;
+    }
+    .hero-stats { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; margin-top: 20px; }
+    .stat { text-align: center; }
+    .stat-num { font-size: 38px; font-weight: 700; line-height: 1; display: block; }
+    .stat-label { font-size: 13px; opacity: 0.75; letter-spacing: 0.5px; margin-top: 4px; text-transform: uppercase; }
+
+    /* ── SECTIONS SHARED ── */
+    section { padding: 72px 40px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label { font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .section-title { font-size: clamp(24px, 3.5vw, 34px); font-weight: 700; color: var(--navy); margin-bottom: 16px; line-height: 1.2; }
+    .section-sub { font-size: 16px; color: var(--text-muted); max-width: 640px; margin-bottom: 48px; font-weight: 400; }
+    .divider { width: 48px; height: 3px; background: var(--navy-mid); border-radius: 2px; margin-bottom: 20px; }
+
+    /* ── ABOUT ── */
+    #about { background: var(--off-white); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    .about-text p { color: #2d4a7a; margin-bottom: 18px; font-size: 15.5px; }
+    .about-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .highlight-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 12px; padding: 22px 20px; text-align: center;
+      box-shadow: 0 2px 8px rgba(12,36,97,0.05);
+    }
+    .highlight-card .icon { font-size: 28px; margin-bottom: 10px; }
+    .highlight-card strong { display: block; font-size: 22px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .highlight-card span { font-size: 13px; color: var(--text-muted); font-weight: 500; }
+
+    /* ── FIELDS ── */
+    #fields { background: var(--white); }
+    .fields-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; }
+    .field-card {
+      border: 1px solid var(--border); border-radius: 12px;
+      padding: 22px 16px; text-align: center;
+      transition: all 0.25s; background: var(--white);
+    }
+    .field-card:hover {
+      border-color: var(--navy-mid);
+      box-shadow: 0 6px 24px rgba(12,36,97,0.1);
+      transform: translateY(-2px);
+    }
+    .field-card .f-icon { font-size: 30px; margin-bottom: 10px; }
+    .field-card .f-name { font-size: 13.5px; font-weight: 600; color: var(--navy); line-height: 1.3; }
+
+    /* ════════════════════════════════════════════
+       ── MANUFACTURERS — FLOATING CARDS ──
+    ════════════════════════════════════════════ */
+    #manufacturers {
+      background: linear-gradient(160deg, #0a1f57 0%, #0f2d7a 50%, #0c2461 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle animated background orbs */
+    #manufacturers::before,
+    #manufacturers::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.15;
+      pointer-events: none;
+    }
+    #manufacturers::before {
+      width: 500px; height: 500px;
+      background: #4a90e2;
+      top: -150px; left: -100px;
+    }
+    #manufacturers::after {
+      width: 400px; height: 400px;
+      background: #7b68ee;
+      bottom: -100px; right: -80px;
+    }
+
+    #manufacturers .section-label { color: rgba(255,255,255,0.5); }
+    #manufacturers .section-title { color: var(--white); }
+    #manufacturers .section-sub   { color: rgba(255,255,255,0.65); }
+    #manufacturers .divider       { background: rgba(255,255,255,0.25); }
+
+    .mfr-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 40px;
+      margin-bottom: 56px;
+      position: relative;
+      z-index: 1;
+    }
+    .mfr-header-text { flex: 1; }
+
+    .mfr-count-badge {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 28px 36px;
+      text-align: center;
+      flex-shrink: 0;
+      min-width: 170px;
+    }
+    .mfr-count-badge .big-num  { font-size: 56px; font-weight: 700; color: var(--white); line-height: 1; display: block; }
+    .mfr-count-badge .big-label { font-size: 11px; opacity: 0.65; text-transform: uppercase; letter-spacing: 1.5px; margin-top: 8px; color: var(--white); }
+
+    /* ── Float keyframes ── */
+    @keyframes floatA {
+      0%, 100% { transform: translateY(0px);   box-shadow: 0 8px 32px rgba(0,0,0,0.35); }
+      50%       { transform: translateY(-11px); box-shadow: 0 20px 48px rgba(0,0,0,0.45); }
+    }
+    @keyframes floatB {
+      0%, 100% { transform: translateY(0px);   box-shadow: 0 8px 32px rgba(0,0,0,0.35); }
+      50%       { transform: translateY(-8px);  box-shadow: 0 18px 44px rgba(0,0,0,0.42); }
+    }
+    @keyframes floatC {
+      0%, 100% { transform: translateY(0px);   box-shadow: 0 8px 32px rgba(0,0,0,0.35); }
+      50%       { transform: translateY(-14px); box-shadow: 0 22px 52px rgba(0,0,0,0.48); }
+    }
+
+    /* grid of floating cards */
+    .mfr-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
+      gap: 22px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .mfr-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.14);
+      backdrop-filter: blur(12px);
+      border-radius: 18px;
+      padding: 26px 20px 22px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 14px;
+      cursor: default;
+      transition: border-color 0.3s, background 0.3s;
+      will-change: transform;
+    }
+
+    /* pause on hover so user can read comfortably */
+    .mfr-card:hover {
+      animation-play-state: paused !important;
+      background: rgba(255,255,255,0.13);
+      border-color: rgba(255,255,255,0.32);
+    }
+
+    /* staggered float assignments */
+    .mfr-card:nth-child(3n+1) { animation: floatA 4.2s ease-in-out infinite; }
+    .mfr-card:nth-child(3n+2) { animation: floatB 5.0s ease-in-out infinite; }
+    .mfr-card:nth-child(3n+3) { animation: floatC 3.8s ease-in-out infinite; }
+
+    /* individual delays so they're all out of phase */
+    .mfr-card:nth-child(1)  { animation-delay: 0.0s; }
+    .mfr-card:nth-child(2)  { animation-delay: 0.5s; }
+    .mfr-card:nth-child(3)  { animation-delay: 1.0s; }
+    .mfr-card:nth-child(4)  { animation-delay: 1.5s; }
+    .mfr-card:nth-child(5)  { animation-delay: 0.8s; }
+    .mfr-card:nth-child(6)  { animation-delay: 0.3s; }
+    .mfr-card:nth-child(7)  { animation-delay: 1.2s; }
+    .mfr-card:nth-child(8)  { animation-delay: 0.6s; }
+    .mfr-card:nth-child(9)  { animation-delay: 1.8s; }
+    .mfr-card:nth-child(10) { animation-delay: 0.1s; }
+    .mfr-card:nth-child(11) { animation-delay: 1.4s; }
+    .mfr-card:nth-child(12) { animation-delay: 0.9s; }
+
+    /* ── Manufacturer logo badge ── */
+    .mfr-logo {
+      width: 70px; height: 70px;
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .mfr-logo::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, transparent 60%);
+      border-radius: inherit;
+    }
+    .mfr-logo svg { width: 42px; height: 42px; position: relative; z-index: 1; }
+    .mfr-logo-text {
+      font-size: 20px; font-weight: 800;
+      color: rgba(255,255,255,0.95);
+      letter-spacing: -0.5px;
+      position: relative; z-index: 1;
+      line-height: 1;
+    }
+
+    .mfr-card .mfr-name {
+      font-size: 14px; font-weight: 700;
+      color: rgba(255,255,255,0.95);
+      line-height: 1.25;
+    }
+    .mfr-card .mfr-country {
+      font-size: 11.5px;
+      color: rgba(255,255,255,0.5);
+      font-weight: 400;
+      line-height: 1.4;
+    }
+    .mfr-card .mfr-tag {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.7);
+      border: 1px solid rgba(255,255,255,0.15);
+      letter-spacing: 0.3px;
+    }
+
+    .mfr-more {
+      text-align: center;
+      margin-top: 32px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.45);
+      font-style: italic;
+      position: relative; z-index: 1;
+    }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--navy); color: var(--white); }
+    #contact .section-label { color: rgba(255,255,255,0.6); }
+    #contact .section-title { color: var(--white); }
+    #contact .section-sub   { color: rgba(255,255,255,0.7); }
+    #contact .divider       { background: rgba(255,255,255,0.3); }
+
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 24px; }
+    .contact-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px; padding: 28px 24px;
+    }
+    .contact-card .c-icon { font-size: 24px; margin-bottom: 12px; opacity: 0.85; }
+    .contact-card .c-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; opacity: 0.6; margin-bottom: 6px; font-weight: 600; }
+    .contact-card .c-value { font-size: 15px; font-weight: 500; line-height: 1.5; }
+    .contact-card a { color: var(--white); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3); transition: border-color 0.2s; }
+    .contact-card a:hover { border-color: var(--white); }
+
+    /* ── FOOTER ── */
+    footer { background: #071a4a; color: rgba(255,255,255,0.45); text-align: center; padding: 22px 40px; font-size: 13px; }
+    footer span { color: rgba(255,255,255,0.65); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      header { padding: 16px 20px; flex-wrap: wrap; gap: 14px; }
+      nav { gap: 14px; flex-wrap: wrap; }
+      section { padding: 52px 20px; }
+      .lang-bar { padding: 8px 20px; }
+      .hero { padding: 60px 20px; }
+      .hero-stats { gap: 28px; }
+      .about-grid { grid-template-columns: 1fr; gap: 32px; }
+      .mfr-header { flex-direction: column; }
+      .mfr-count-badge { width: 100%; }
+      .mfr-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 480px) {
+      .about-highlights { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .fields-grid { grid-template-columns: repeat(2, 1fr); }
+      .mfr-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+    }
+
+    /* RTL */
+    html[dir="rtl"] .section-sub,
+    html[dir="rtl"] .about-text p { text-align: right; }
+    html[dir="rtl"] .hero { direction: rtl; }
+
+    /* ── LANGUAGE TRANSITION ── */
+    /* Wrap all page content in a single layer we can fade */
+    #page-content {
+      transition:
+        opacity      0.28s cubic-bezier(0.4, 0, 0.2, 1),
+        filter       0.28s cubic-bezier(0.4, 0, 0.2, 1),
+        transform    0.28s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: opacity, filter, transform;
+    }
+
+    #page-content.lang-out {
+      opacity:   0;
+      filter:    blur(3px);
+      transform: translateY(6px);
+    }
+
+    /* Logo fades independently for a gentle crossfade feel */
+    .logo-img {
+      transition:
+        opacity   0.22s ease,
+        transform 0.22s ease;
+    }
+    .logo-img.logo-swapping {
+      opacity:   0;
+      transform: scale(0.94);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Language Bar (outside page-content so it stays visible during fade) -->
+  <div class="lang-bar">
+    <button class="lang-btn" id="langToggle" onclick="toggleLang()">עברית</button>
+  </div>
+
+  <div id="page-content">
+
+  <!-- ══ HEADER ══ -->
+  <header>
+    <div class="logo-area">
+      <img
+        id="logoImg"
+        class="logo-img"
+        src="logo-en.png"
+        data-logo-en="logo-en.png"
+        data-logo-he="logo-he.png"
+        alt="Shani Tal Marketing Ltd."
+      />
+    </div>
+    <nav>
+      <a href="#about"         data-en="About"          data-he="אודות">About</a>
+      <a href="#fields"        data-en="Medical Fields"  data-he="תחומים">Medical Fields</a>
+      <a href="#manufacturers" data-en="Manufacturers"   data-he="יצרנים">Manufacturers</a>
+      <a href="#contact"       data-en="Contact"         data-he="צור קשר">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ══ HERO ══ -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge" data-en="Medical Equipment · Israel" data-he="ציוד רפואי · ישראל">Medical Equipment · Israel</div>
+      <h1 data-en="Your Trusted Partner in Medical Innovation" data-he="השותף המוביל שלך לחדשנות רפואית">Your Trusted Partner in Medical Innovation</h1>
+      <p data-en="Shani Tal Marketing connects Israel's leading healthcare institutions with the world's most advanced medical equipment, representing over 40 international manufacturers across a wide spectrum of clinical disciplines." data-he="שני טל שיווק מחברת בין מוסדות הבריאות המובילים בישראל לבין הציוד הרפואי המתקדם ביותר בעולם, ומייצגת למעלה מ-40 יצרנים בינלאומיים מובילים במגוון רחב של תחומים קליניים."></p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">40+</span>
+          <span class="stat-label" data-en="Years of Excellence" data-he="שנות מצוינות">Years of Excellence</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">40+</span>
+          <span class="stat-label" data-en="Global Manufacturers" data-he="יצרנים בינלאומיים">Global Manufacturers</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">~25K</span>
+          <span class="stat-label" data-en="Hospital Beds Served" data-he="מיטות אשפוז שמשרתים">Hospital Beds Served</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ ABOUT ══ -->
+  <section id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-text">
+          <div class="section-label" data-en="Who We Are" data-he="מי אנחנו">Who We Are</div>
+          <div class="divider"></div>
+          <h2 class="section-title" data-en="Decades of Expertise in Medical Equipment Distribution" data-he="עשורים של מומחיות בשיווק ציוד רפואי">Decades of Expertise in Medical Equipment Distribution</h2>
+          <p data-en="Founded in the 1980s, Shani Tal Marketing Ltd. has grown to become one of Israel's most respected distributors of advanced medical devices and equipment. Headquartered in Petah Tikva, we maintain exclusive representation agreements with world-leading manufacturers, bringing cutting-edge solutions to every corner of Israel's healthcare system." data-he="שני טל שיווק בע״מ, שנוסדה בשנות ה-80, צמחה להיות אחת מחברות ההפצה המובילות והמכובדות ביותר בישראל לציוד רפואי מתקדם. ממטה החברה בפתח תקווה, אנו שומרים על הסכמי ייצוג בלעדיים עם יצרנים מובילים בעולם."></p>
+          <p data-en="We serve all public and private hospitals and medical institutions across Israel — a market of approximately 25,000 hospital beds — providing not only world-class equipment but also professional after-sales support and training." data-he="אנו משרתים את כלל בתי החולים והמוסדות הרפואיים הציבוריים והפרטיים בישראל — שוק המונה כ-25,000 מיטות אשפוז — ומספקים לא רק ציוד ברמה עולמית, אלא גם תמיכה מקצועית לאחר המכירה והדרכות."></p>
+          <p data-en="All manufacturers we represent hold FDA or CE certification. Our deep regulatory knowledge and long-standing relationships with procurement bodies — including Sarel and Israel's Government Procurement Authority — ensure a smooth path from manufacturer to bedside." data-he="כל היצרנים שאנו מייצגים מחזיקים באישורי FDA או CE. הידע הרגולטורי העמוק שלנו וקשרינו ארוכי השנים עם גורמי הרכש — לרבות שר״ל ורשות הרכש הממשלתית — מבטיחים מעבר חלק מהיצרן למיטת החולה."></p>
+        </div>
+        <div class="about-highlights">
+          <div class="highlight-card"><div class="icon">🏥</div><strong data-en="All" data-he="כולם">All</strong><span data-en="Israeli Hospitals" data-he="בתי חולים ישראליים">Israeli Hospitals</span></div>
+          <div class="highlight-card"><div class="icon">🌍</div><strong>40+</strong><span data-en="Global Brands" data-he="מותגים גלובליים">Global Brands</span></div>
+          <div class="highlight-card"><div class="icon">📋</div><strong>FDA &amp; CE</strong><span data-en="Certified Partners" data-he="שותפים מוסמכים">Certified Partners</span></div>
+          <div class="highlight-card"><div class="icon">🤝</div><strong>40+</strong><span data-en="Years Experience" data-he="שנות ניסיון">Years Experience</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ MEDICAL FIELDS ══ -->
+  <section id="fields">
+    <div class="section-inner">
+      <div class="section-label" data-en="What We Cover" data-he="התחומים שלנו">What We Cover</div>
+      <div class="divider"></div>
+      <h2 class="section-title" data-en="Clinical Disciplines We Serve" data-he="תחומים קליניים שאנו משרתים">Clinical Disciplines We Serve</h2>
+      <p class="section-sub" data-en="Our portfolio spans a broad spectrum of medical specialties, ensuring comprehensive coverage for every department in the modern hospital." data-he="הפורטפוליו שלנו משתרע על מגוון רחב של התמחויות רפואיות, ומבטיח כיסוי מקיף לכל מחלקה בבית החולים המודרני."></p>
+      <div class="fields-grid">
+        <div class="field-card"><div class="f-icon">🔬</div><div class="f-name" data-en="Gastroenterology &amp; Endoscopy" data-he="גסטרואנטרולוגיה ואנדוסקופיה">Gastroenterology &amp; Endoscopy</div></div>
+        <div class="field-card"><div class="f-icon">🔩</div><div class="f-name" data-en="Laparoscopic Surgery" data-he="כירורגיה לפרוסקופית">Laparoscopic Surgery</div></div>
+        <div class="field-card"><div class="f-icon">🦴</div><div class="f-name" data-en="Endoscopic Spine Surgery" data-he="ניתוחי עמוד שדרה אנדוסקופיים">Endoscopic Spine Surgery</div></div>
+        <div class="field-card"><div class="f-icon">🫁</div><div class="f-name" data-en="Urology" data-he="אורולוגיה">Urology</div></div>
+        <div class="field-card"><div class="f-icon">🩺</div><div class="f-name" data-en="Gynecology" data-he="גינקולוגיה">Gynecology</div></div>
+        <div class="field-card"><div class="f-icon">🦵</div><div class="f-name" data-en="Arthroscopy &amp; Orthopedics" data-he="ארתרוסקופיה ואורתופדיה">Arthroscopy &amp; Orthopedics</div></div>
+        <div class="field-card"><div class="f-icon">📡</div><div class="f-name" data-en="Radiology &amp; Ultrasound" data-he="רדיולוגיה ואולטרסאונד">Radiology &amp; Ultrasound</div></div>
+        <div class="field-card"><div class="f-icon">⚡</div><div class="f-name" data-en="Aesthetic &amp; Laser Medicine" data-he="רפואה אסתטית ולייזר">Aesthetic &amp; Laser Medicine</div></div>
+        <div class="field-card"><div class="f-icon">🧠</div><div class="f-name" data-en="Neurosurgery" data-he="נוירוכירורגיה">Neurosurgery</div></div>
+        <div class="field-card"><div class="f-icon">💉</div><div class="f-name" data-en="IV Therapy" data-he="טיפול תוך-ורידי">IV Therapy</div></div>
+        <div class="field-card"><div class="f-icon">🔭</div><div class="f-name" data-en="Surgical Magnification" data-he="הגדלה כירורגית">Surgical Magnification</div></div>
+        <div class="field-card"><div class="f-icon">🧹</div><div class="f-name" data-en="Sterilization &amp; Reprocessing" data-he="עיקור וחיטוי כלים">Sterilization &amp; Reprocessing</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ MANUFACTURERS — FLOATING CARDS ══ -->
+  <section id="manufacturers">
+    <div class="section-inner">
+
+      <div class="mfr-header">
+        <div class="mfr-header-text">
+          <div class="section-label" data-en="Our Global Partners" data-he="השותפים הגלובליים שלנו">Our Global Partners</div>
+          <div class="divider"></div>
+          <h2 class="section-title" data-en="World-Leading Manufacturers" data-he="יצרנים מובילים בעולם">World-Leading Manufacturers</h2>
+          <p class="section-sub" data-en="We hold exclusive Israeli distribution rights for over 40 international manufacturers. All partners hold FDA or CE certification." data-he="אנו מחזיקים בזכויות הפצה בלעדיות בישראל עבור למעלה מ-40 יצרנים בינלאומיים. כל השותפים מחזיקים באישור FDA או CE."></p>
+        </div>
+        <div class="mfr-count-badge">
+          <span class="big-num">40+</span>
+          <div class="big-label" data-en="Global Partners" data-he="שותפים גלובליים">Global Partners</div>
+        </div>
+      </div>
+
+      <!-- FLOATING MANUFACTURER CARDS -->
+      <div class="mfr-grid">
+
+        <!-- Richard Wolf -->
+        <div class="mfr-card">
+          <div class="mfr-logo" style="background: linear-gradient(135deg,#c0392b,#922b21);">
+            <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Wolf head silhouette -->
+              <path d="M21 6 L30 14 L34 11 L32 18 L36 22 L30 22 L28 30 L21 26 L14 30 L12 22 L6 22 L10 18 L8 11 L12 14 Z" fill="rgba(255,255,255,0.9)"/>
+              <circle cx="17" cy="18" r="2" fill="#922b21"/>
+              <circle cx="25" cy="18" r="2" fill="#922b21"/>
+            </svg>
+          </div>
+          <div class="mfr-name">Richard Wolf GmbH</div>
+          <div class="mfr-country" data-en="Germany" data-he="גרמניה">Germany</div>
+          <div class="mfr-tag" data-en="Endoscopy · MIS" data-he="אנדוסקופיה · ניתוחים זעיר-פולשניים">Endoscopy · MIS</div>
+        </div>
+
+        <!-- Fujinon / Fujifilm -->
+        <div class="mfr-card">
+          <div class="mfr-logo" style="background: linear-gradient(135deg,#1a7f4b,#15683d);">
+            <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Lens / circle motif -->
+              <circle cx="21" cy="21" r="13" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" fill="none"/>
+              <circle cx="21" cy="21" r="7"  stroke="rgba(255,255,255,0.7)" stroke-width="2"   fill="none"/>
+              <circle cx="21" cy="21" r="3"  fill="rgba(255,255,255,0.9)"/>
+            </svg>
+          </div>
+          <div class="mfr-name">Fujinon</div>
+          <div class="mfr-country" data-en="Japan / Germany" data-he="יפן / גרמניה">Japan / Germany</div>
+          <div class="mfr-tag" data-en="Gastro Endoscopy" data-he="אנדוסקופיה גסטרו">Gastro Endoscopy</div>
+        </div>
+
+        <!-- MTW Endoskopie -->
+        <div class="mfr-card">
+          <div class="mfr-logo" style="background: linear-gradient(135deg,#2471a3,#1a5276);">
+            <div class="mfr-logo-text">MTW</div>
+          </div>
+          <div class="mfr-name">MTW Endoskopie</div>
+          <div class="mfr-country" data-en="Germany" data-he="גרמניה">Germany</div>
+          <div class="mfr-tag" data-en="GI Disposables" data-he="חד-פעמי לגסטרו">GI Disposables</div>
+        </div>
+
+        <!-- Ackermann Instrument -->
+        <div class="mfr-card">
+          <div class="mfr-logo" style="background: linear-gradient(135deg,#d68910,#b7770d);">
+            <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Surgical instrument silhouette -->
+              <rect x="19" y="5"  width="4" height="28" rx="2" fill="rgba(255,255,255,0.9)"/>
+              <rect x="12" y="30" width="18" height="4"  rx="2" fill="rgba(255,255,255,0.9)"/>
+              <rect x="15" y="22" width="12" height="3"  rx="1.5" fill="rgba(255,255,255,0.7)"/>
+            </svg>
+          </div>
+          <div class="mfr-name">Ackermann Instrument</div>
+          <div class="mfr-country" data-en="Germany" data-he="גרמניה">Germany</div>
+          <div class="mfr-tag" data-en="Laparoscopy" data-he="לפרוסקופיה">Laparoscopy</div>
+        </div>
+
+        <!-- B&K Medical -->
+        <div class="mfr-card">
+          <div class="mfr-logo" style="background: linear-gradient(135deg,#0e8a7a,#0a6b5e);">
+            <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Ultrasound wave arcs -->
+              <path d="M14 21 Q14 14 21 14" stroke="rgba(255,255,255,0.5)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <path d="M11 21 Q11 10 21 10" stroke="rgba(255,255,255,0.7)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <path d="M8 21 Q8 6  21 6"  stroke="rgba(255,255,255,0.9)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <circle cx="21" cy="21" r="4" fill="rgba(255,255,255,0.9)"/>
+              <path d="M21 25 L21 36" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="mfr-name">B&amp;K Medical</div>
+          <div class="mfr-country" data-en="Denmark" data-he="דנמרק">Denmark</div>
+          <div class="mfr-tag" data-en="Ultrasound" data-he="אולטרסאונד">Ultrasound</div>
+        </div>
+
+        <!-- Cynosure -->
+        <div class="mfr-card">
+          <div class="mfr-logo" style="background: linear-gradient(135deg,#7d3c98,#6c3483);">
+            <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Laser beam burst -->
+              <circle cx="21" cy="21" r="5" fill="rgba(255,255,255,0.95)"/>
+              <line x1="21" y1="5"  x2="21" y2="12" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="21" y1="30" x2="21" y2="37" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="5"  y1="21" x2="12" y2="21" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="30" y1="21" x2="37" y2="21" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="9"  y1="9"  x2="14" y2="14" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/>
+              <line x1="28" y1="28" x2="33" y2="33" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/>
+              <line x1="33" y1="9"  x2="28" y2="14" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/>
+              <line x1="9"  y1="33" x2="14" y2="28" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="mfr-name">Cynosure</div>
+          <div class="mfr-country" data-en="USA" data-he="ארה״ב">USA</div>
+          <div class="mfr-tag" data-en="Laser Equipment" data-he="ציוד לייזר">Laser Equipment</div>
+        </div>
+
+        <!-- Life Tech -->
+        <div class="mfr-card">
+          <div class="mfr-logo" style="background: linear-gradient(135deg,#117a8b,#0c5f6e);">
+            <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Cross / plus medical symbol -->
+              <rect x="17" y="7"  width="8" height="28" rx="3" fill="rgba(255,255,255,0.9)"/>
+              <rect x="7"  y="17" width="28" height="8"  rx="3" fill="rgba(255,255,255,0.9)"/>
+            </svg>
+          </div>
+          <div class="mfr-name">Life Tech</div>
+          <div class="mfr-country" data-en="USA" data-he="ארה״ב">USA</div>
+          <div class="mfr-tag" data-en="Urology Systems" data-he="מערכות אורולוגיה">Urology Systems</div>
+        </div>
+
+        <!-- Medwork -->
+        <div class="mfr-card">
+          <div class="mfr-logo" style="background: linear-gradient(135deg,#1f618d,#1a4f73);">
+            <div class="mfr-logo-text">MW</div>
+          </div>
+          <div class="mfr-name">Medwork</div>
+          <div class="mfr-country" data-en="Germany" data-he="גרמניה">Germany</div>
+          <div class="mfr-tag" data-en="GI Disposables" data-he="חד-פעמי לגסטרו">GI Disposables</div>
+        </div>
+
+        <!-- Sunoptic Technologies -->
+        <div class="mfr-card">
+          <div class="mfr-logo" style="background: linear-gradient(135deg,#d4a017,#b8860b);">
+            <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Sun / light source -->
+              <circle cx="21" cy="21" r="8" fill="rgba(255,255,255,0.95)"/>
+              <line x1="21" y1="5"  x2="21" y2="10" stroke="rgba(255,255,255,0.85)" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="21" y1="32" x2="21" y2="37" stroke="rgba(255,255,255,0.85)" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="5"  y1="21" x2="10" y2="21" stroke="rgba(255,255,255,0.85)" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="32" y1="21" x2="37" y2="21" stroke="rgba(255,255,255,0.85)" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="9"  y1="9"  x2="13" y2="13" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/>
+              <line x1="29" y1="29" x2="33" y2="33" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/>
+              <line x1="33" y1="9"  x2="29" y2="13" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/>
+              <line x1="9"  y1="33" x2="13" y2="29" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="mfr-name">Sunoptic Technologies</div>
+          <div class="mfr-country" data-en="USA" data-he="ארה״ב">USA</div>
+          <div class="mfr-tag" data-en="Surgical Lighting" data-he="תאורה כירורגית">Surgical Lighting</div>
+        </div>
+
+        <!-- Medivision -->
+        <div class="mfr-card">
+          <div class="mfr-logo" style="background: linear-gradient(135deg,#2e4b9e,#1e3580);">
+            <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Monitor screen -->
+              <rect x="6" y="9" width="30" height="21" rx="3" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" fill="none"/>
+              <line x1="14" y1="30" x2="14" y2="36" stroke="rgba(255,255,255,0.7)" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="28" y1="30" x2="28" y2="36" stroke="rgba(255,255,255,0.7)" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="10" y1="36" x2="32" y2="36" stroke="rgba(255,255,255,0.7)" stroke-width="2.5" stroke-linecap="round"/>
+              <!-- ECG line on screen -->
+              <polyline points="9,19 14,19 16,14 18,24 20,19 24,19 26,15 28,23 30,19 33,19"
+                        stroke="rgba(255,255,255,0.9)" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="mfr-name">Medivision</div>
+          <div class="mfr-country" data-en="USA" data-he="ארה״ב">USA</div>
+          <div class="mfr-tag" data-en="Surgical Monitors" data-he="מוניטורים כירורגיים">Surgical Monitors</div>
+        </div>
+
+        <!-- Life Optic -->
+        <div class="mfr-card">
+          <div class="mfr-logo" style="background: linear-gradient(135deg,#148f77,#0e6655);">
+            <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Binocular / loupe -->
+              <circle cx="14" cy="22" r="7" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" fill="none"/>
+              <circle cx="28" cy="22" r="7" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" fill="none"/>
+              <line x1="21" y1="22" x2="21" y2="22" stroke="rgba(255,255,255,0.9)" stroke-width="3" stroke-linecap="round"/>
+              <line x1="14" y1="15" x2="14" y2="10" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round"/>
+              <line x1="28" y1="15" x2="28" y2="10" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round"/>
+              <line x1="14" y1="10" x2="28" y2="10" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="mfr-name">Life Optic</div>
+          <div class="mfr-country" data-en="Austria" data-he="אוסטריה">Austria</div>
+          <div class="mfr-tag" data-en="Surgical Loupes" data-he="עדשות כירורגיות">Surgical Loupes</div>
+        </div>
+
+        <!-- Medicart -->
+        <div class="mfr-card">
+          <div class="mfr-logo" style="background: linear-gradient(135deg,#5b2333,#922b45);">
+            <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Cart / trolley -->
+              <rect x="10" y="10" width="22" height="18" rx="2" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" fill="none"/>
+              <line x1="15" y1="28" x2="15" y2="33" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="27" y1="28" x2="27" y2="33" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="15" cy="35" r="2.5" fill="rgba(255,255,255,0.9)"/>
+              <circle cx="27" cy="35" r="2.5" fill="rgba(255,255,255,0.9)"/>
+              <!-- cross on cart -->
+              <line x1="21" y1="14" x2="21" y2="24" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round"/>
+              <line x1="16" y1="19" x2="26" y2="19" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="mfr-name">Medicart</div>
+          <div class="mfr-country" data-en="England" data-he="אנגליה">England</div>
+          <div class="mfr-tag" data-en="Medical Trolleys" data-he="עגלות רפואיות">Medical Trolleys</div>
+        </div>
+
+      </div><!-- /mfr-grid -->
+
+      <p class="mfr-more" data-en="…and many more exclusive brands. We welcome inquiries from FDA / CE certified manufacturers seeking Israeli representation." data-he="…ועוד מותגים בלעדיים רבים. אנו מברכים על פניות מיצרנים בעלי אישור FDA / CE המחפשים ייצוג בישראל."></p>
+    </div>
+  </section>
+
+  <!-- ══ CONTACT ══ -->
+  <section id="contact">
+    <div class="section-inner">
+      <div class="section-label" data-en="Get In Touch" data-he="צרו קשר">Get In Touch</div>
+      <div class="divider"></div>
+      <h2 class="section-title" data-en="Contact Us" data-he="צור קשר">Contact Us</h2>
+      <p class="section-sub" data-en="Whether you represent a medical equipment manufacturer seeking Israeli distribution, or a healthcare institution looking for advanced solutions — we'd love to hear from you." data-he="בין אם אתם יצרן ציוד רפואי המחפש הפצה בישראל, ובין אם אתם מוסד בריאות המחפש פתרונות מתקדמים — נשמח לשמוע מכם."></p>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="c-icon">📍</div>
+          <div class="c-label" data-en="Address" data-he="כתובת">Address</div>
+          <div class="c-value" data-en="7 Imber St., Kiryat Aryeh<br>Petah Tikva 4951141, Israel" data-he="רחוב אימבר 7, קריית אריה<br>פתח תקווה 4951141, ישראל">7 Imber St., Kiryat Aryeh<br>Petah Tikva 4951141, Israel</div>
+        </div>
+        <div class="contact-card">
+          <div class="c-icon">📞</div>
+          <div class="c-label" data-en="Phone" data-he="טלפון">Phone</div>
+          <div class="c-value"><a href="tel:+97239314177">+972-3-931-4177</a></div>
+        </div>
+        <div class="contact-card">
+          <div class="c-icon">📠</div>
+          <div class="c-label" data-en="Fax" data-he="פקס">Fax</div>
+          <div class="c-value">+972-3-931-4188</div>
+        </div>
+        <div class="contact-card">
+          <div class="c-icon">✉️</div>
+          <div class="c-label" data-en="Email" data-he="דוא״ל">Email</div>
+          <div class="c-value"><a href="mailto:shanital@netvision.net.il">shanital@netvision.net.il</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer id="site-footer">
+    <span data-en="© 2025 Shani Tal Marketing Ltd. · Petah Tikva, Israel · All rights reserved."
+          data-he="© 2025 שני טל שיווק בע״מ · פתח תקווה, ישראל · כל הזכויות שמורות.">
+      © 2025 Shani Tal Marketing Ltd. · Petah Tikva, Israel · All rights reserved.
+    </span>
+  </footer>
+
+  </div><!-- /#page-content -->
+
+  <!-- ══ LANGUAGE SCRIPT ══ -->
+  <script>
+    let currentLang = 'en';
+    let transitioning = false;
+
+    const FADE_OUT_MS = 260;  // how long the fade-out lasts
+    const FADE_IN_MS  = 320;  // how long the fade-in lasts (slightly slower = more tranquil)
+
+    function toggleLang() {
+      if (transitioning) return;          // ignore rapid clicks mid-transition
+      transitioning = true;
+
+      const nextLang = currentLang === 'en' ? 'he' : 'en';
+      const page     = document.getElementById('page-content');
+      const logoImg  = document.getElementById('logoImg');
+
+      /* ① Fade page content OUT + shrink logo */
+      page.classList.add('lang-out');
+      if (logoImg) logoImg.classList.add('logo-swapping');
+
+      setTimeout(() => {
+        /* ② While invisible: swap all content + dir */
+        currentLang = nextLang;
+        swapContent(nextLang);
+
+        /* Force browser to register the new dir before fading back */
+        page.getBoundingClientRect();
+
+        /* ③ Fade page content IN */
+        page.classList.remove('lang-out');
+        if (logoImg) logoImg.classList.remove('logo-swapping');
+
+        setTimeout(() => { transitioning = false; }, FADE_IN_MS);
+
+      }, FADE_OUT_MS);
+    }
+
+    function swapContent(lang) {
+      const html = document.documentElement;
+      html.setAttribute('lang', lang);
+      html.setAttribute('dir', lang === 'he' ? 'rtl' : 'ltr');
+
+      /* Toggle button label */
+      document.getElementById('langToggle').textContent = lang === 'en' ? 'עברית' : 'English';
+
+      /* Swap all data-en / data-he text nodes */
+      document.querySelectorAll('[data-en]').forEach(el => {
+        const text = el.getAttribute('data-' + lang);
+        if (text !== null) el.innerHTML = text;
+      });
+
+      /* Logo source swap (already invisible during transition) */
+      const logoImg = document.getElementById('logoImg');
+      if (logoImg) {
+        const src = logoImg.getAttribute('data-logo-' + lang);
+        if (src) logoImg.src = src;
+      }
+    }
+
+    /* Pause floating animations while scrolling */
+    let scrollTimer;
+    window.addEventListener('scroll', () => {
+      document.querySelectorAll('.mfr-card').forEach(c => c.style.animationPlayState = 'paused');
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(() => {
+        document.querySelectorAll('.mfr-card').forEach(c => c.style.animationPlayState = '');
+      }, 300);
+    }, { passive: true });
+  </script>
+
+</body>
+</html>
