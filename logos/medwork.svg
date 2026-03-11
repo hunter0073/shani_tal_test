@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80">
-  <rect width="200" height="80" fill="#fff"/>
-  <!-- M mark -->
-  <g transform="translate(8,15)">
-    <path d="M5 45 L5 10 L22 32 L39 10 L39 45" stroke="#1f618d" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-  </g>
-  <text x="58" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1f618d" letter-spacing="-0.3">medwork</text>
-  <text x="58" y="52" font-family="Arial, sans-serif" font-size="8.5" fill="#888" letter-spacing="0.8">GI DISPOSABLES · GERMANY</text>
-</svg>
