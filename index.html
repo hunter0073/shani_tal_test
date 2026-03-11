@@ -316,19 +316,21 @@
       flex-shrink: 0;
       position: relative;
       overflow: hidden;
+      background: #fff;
+      border: 1.5px solid #e8eaf0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      padding: 7px;
+      box-sizing: border-box;
     }
-    .mfr-logo::after {
-      content: '';
-      position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, transparent 60%);
-      border-radius: inherit;
+    .mfr-logo img {
+      width: 100%; height: 100%;
+      object-fit: contain;
+      display: block;
     }
-    .mfr-logo svg { width: 42px; height: 42px; position: relative; z-index: 1; }
     .mfr-logo-text {
-      font-size: 20px; font-weight: 800;
-      color: rgba(255,255,255,0.95);
+      font-size: 16px; font-weight: 800;
+      color: #1a2e6b;
       letter-spacing: -0.5px;
-      position: relative; z-index: 1;
       line-height: 1;
     }
 
@@ -559,13 +561,9 @@
 
         <!-- Richard Wolf -->
         <div class="mfr-card">
-          <div class="mfr-logo" style="background: linear-gradient(135deg,#c0392b,#922b21);">
-            <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- Wolf head silhouette -->
-              <path d="M21 6 L30 14 L34 11 L32 18 L36 22 L30 22 L28 30 L21 26 L14 30 L12 22 L6 22 L10 18 L8 11 L12 14 Z" fill="rgba(255,255,255,0.9)"/>
-              <circle cx="17" cy="18" r="2" fill="#922b21"/>
-              <circle cx="25" cy="18" r="2" fill="#922b21"/>
-            </svg>
+          <div class="mfr-logo">
+            <img src="https://logo.clearbit.com/richardwolf.de" alt="Richard Wolf"
+              onerror="this.parentElement.style.background='linear-gradient(135deg,#c0392b,#922b21)';this.parentElement.style.border='none';this.parentElement.style.padding='0';this.outerHTML='<div class=mfr-logo-text style=color:#fff>RW</div>'">
           </div>
           <div class="mfr-name">Richard Wolf GmbH</div>
           <div class="mfr-country" data-en="Germany" data-he="גרמניה">Germany</div>
@@ -574,13 +572,9 @@
 
         <!-- Fujinon / Fujifilm -->
         <div class="mfr-card">
-          <div class="mfr-logo" style="background: linear-gradient(135deg,#1a7f4b,#15683d);">
-            <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- Lens / circle motif -->
-              <circle cx="21" cy="21" r="13" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" fill="none"/>
-              <circle cx="21" cy="21" r="7"  stroke="rgba(255,255,255,0.7)" stroke-width="2"   fill="none"/>
-              <circle cx="21" cy="21" r="3"  fill="rgba(255,255,255,0.9)"/>
-            </svg>
+          <div class="mfr-logo">
+            <img src="https://logo.clearbit.com/fujinon.com" alt="Fujinon"
+              onerror="this.parentElement.style.background='linear-gradient(135deg,#1a7f4b,#15683d)';this.parentElement.style.border='none';this.parentElement.style.padding='0';this.outerHTML='<div class=mfr-logo-text style=color:#fff>FJ</div>'">
           </div>
           <div class="mfr-name">Fujinon</div>
           <div class="mfr-country" data-en="Japan / Germany" data-he="יפן / גרמניה">Japan / Germany</div>
@@ -589,8 +583,9 @@
 
         <!-- MTW Endoskopie -->
         <div class="mfr-card">
-          <div class="mfr-logo" style="background: linear-gradient(135deg,#2471a3,#1a5276);">
-            <div class="mfr-logo-text">MTW</div>
+          <div class="mfr-logo">
+            <img src="https://logo.clearbit.com/mtw-endoskopie.de" alt="MTW Endoskopie"
+              onerror="this.parentElement.style.background='linear-gradient(135deg,#2471a3,#1a5276)';this.parentElement.style.border='none';this.parentElement.style.padding='0';this.outerHTML='<div class=mfr-logo-text style=color:#fff>MTW</div>'">
           </div>
           <div class="mfr-name">MTW Endoskopie</div>
           <div class="mfr-country" data-en="Germany" data-he="גרמניה">Germany</div>
@@ -599,13 +594,9 @@
 
         <!-- Ackermann Instrument -->
         <div class="mfr-card">
-          <div class="mfr-logo" style="background: linear-gradient(135deg,#d68910,#b7770d);">
-            <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- Surgical instrument silhouette -->
-              <rect x="19" y="5"  width="4" height="28" rx="2" fill="rgba(255,255,255,0.9)"/>
-              <rect x="12" y="30" width="18" height="4"  rx="2" fill="rgba(255,255,255,0.9)"/>
-              <rect x="15" y="22" width="12" height="3"  rx="1.5" fill="rgba(255,255,255,0.7)"/>
-            </svg>
+          <div class="mfr-logo">
+            <img src="https://logo.clearbit.com/ackermann-instrument.de" alt="Ackermann Instrument"
+              onerror="this.parentElement.style.background='linear-gradient(135deg,#d68910,#b7770d)';this.parentElement.style.border='none';this.parentElement.style.padding='0';this.outerHTML='<div class=mfr-logo-text style=color:#fff>AI</div>'">
           </div>
           <div class="mfr-name">Ackermann Instrument</div>
           <div class="mfr-country" data-en="Germany" data-he="גרמניה">Germany</div>
@@ -614,15 +605,9 @@
 
         <!-- B&K Medical -->
         <div class="mfr-card">
-          <div class="mfr-logo" style="background: linear-gradient(135deg,#0e8a7a,#0a6b5e);">
-            <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- Ultrasound wave arcs -->
-              <path d="M14 21 Q14 14 21 14" stroke="rgba(255,255,255,0.5)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-              <path d="M11 21 Q11 10 21 10" stroke="rgba(255,255,255,0.7)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-              <path d="M8 21 Q8 6  21 6"  stroke="rgba(255,255,255,0.9)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-              <circle cx="21" cy="21" r="4" fill="rgba(255,255,255,0.9)"/>
-              <path d="M21 25 L21 36" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round"/>
-            </svg>
+          <div class="mfr-logo">
+            <img src="https://logo.clearbit.com/bkmedical.com" alt="B&K Medical"
+              onerror="this.parentElement.style.background='linear-gradient(135deg,#0e8a7a,#0a6b5e)';this.parentElement.style.border='none';this.parentElement.style.padding='0';this.outerHTML='<div class=mfr-logo-text style=color:#fff>B&amp;K</div>'">
           </div>
           <div class="mfr-name">B&amp;K Medical</div>
           <div class="mfr-country" data-en="Denmark" data-he="דנמרק">Denmark</div>
@@ -631,19 +616,9 @@
 
         <!-- Cynosure -->
         <div class="mfr-card">
-          <div class="mfr-logo" style="background: linear-gradient(135deg,#7d3c98,#6c3483);">
-            <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- Laser beam burst -->
-              <circle cx="21" cy="21" r="5" fill="rgba(255,255,255,0.95)"/>
-              <line x1="21" y1="5"  x2="21" y2="12" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="21" y1="30" x2="21" y2="37" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="5"  y1="21" x2="12" y2="21" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="30" y1="21" x2="37" y2="21" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="9"  y1="9"  x2="14" y2="14" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/>
-              <line x1="28" y1="28" x2="33" y2="33" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/>
-              <line x1="33" y1="9"  x2="28" y2="14" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/>
-              <line x1="9"  y1="33" x2="14" y2="28" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/>
-            </svg>
+          <div class="mfr-logo">
+            <img src="https://logo.clearbit.com/cynosure.com" alt="Cynosure"
+              onerror="this.parentElement.style.background='linear-gradient(135deg,#7d3c98,#6c3483)';this.parentElement.style.border='none';this.parentElement.style.padding='0';this.outerHTML='<div class=mfr-logo-text style=color:#fff>CY</div>'">
           </div>
           <div class="mfr-name">Cynosure</div>
           <div class="mfr-country" data-en="USA" data-he="ארה״ב">USA</div>
@@ -652,12 +627,9 @@
 
         <!-- Life Tech -->
         <div class="mfr-card">
-          <div class="mfr-logo" style="background: linear-gradient(135deg,#117a8b,#0c5f6e);">
-            <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- Cross / plus medical symbol -->
-              <rect x="17" y="7"  width="8" height="28" rx="3" fill="rgba(255,255,255,0.9)"/>
-              <rect x="7"  y="17" width="28" height="8"  rx="3" fill="rgba(255,255,255,0.9)"/>
-            </svg>
+          <div class="mfr-logo">
+            <img src="https://logo.clearbit.com/lifetech.com" alt="Life Tech"
+              onerror="this.parentElement.style.background='linear-gradient(135deg,#117a8b,#0c5f6e)';this.parentElement.style.border='none';this.parentElement.style.padding='0';this.outerHTML='<div class=mfr-logo-text style=color:#fff>LT</div>'">
           </div>
           <div class="mfr-name">Life Tech</div>
           <div class="mfr-country" data-en="USA" data-he="ארה״ב">USA</div>
@@ -666,8 +638,9 @@
 
         <!-- Medwork -->
         <div class="mfr-card">
-          <div class="mfr-logo" style="background: linear-gradient(135deg,#1f618d,#1a4f73);">
-            <div class="mfr-logo-text">MW</div>
+          <div class="mfr-logo">
+            <img src="https://logo.clearbit.com/medwork.de" alt="Medwork"
+              onerror="this.parentElement.style.background='linear-gradient(135deg,#1f618d,#1a4f73)';this.parentElement.style.border='none';this.parentElement.style.padding='0';this.outerHTML='<div class=mfr-logo-text style=color:#fff>MW</div>'">
           </div>
           <div class="mfr-name">Medwork</div>
           <div class="mfr-country" data-en="Germany" data-he="גרמניה">Germany</div>
@@ -676,19 +649,9 @@
 
         <!-- Sunoptic Technologies -->
         <div class="mfr-card">
-          <div class="mfr-logo" style="background: linear-gradient(135deg,#d4a017,#b8860b);">
-            <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- Sun / light source -->
-              <circle cx="21" cy="21" r="8" fill="rgba(255,255,255,0.95)"/>
-              <line x1="21" y1="5"  x2="21" y2="10" stroke="rgba(255,255,255,0.85)" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="21" y1="32" x2="21" y2="37" stroke="rgba(255,255,255,0.85)" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="5"  y1="21" x2="10" y2="21" stroke="rgba(255,255,255,0.85)" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="32" y1="21" x2="37" y2="21" stroke="rgba(255,255,255,0.85)" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="9"  y1="9"  x2="13" y2="13" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/>
-              <line x1="29" y1="29" x2="33" y2="33" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/>
-              <line x1="33" y1="9"  x2="29" y2="13" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/>
-              <line x1="9"  y1="33" x2="13" y2="29" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/>
-            </svg>
+          <div class="mfr-logo">
+            <img src="https://logo.clearbit.com/sunoptic.com" alt="Sunoptic Technologies"
+              onerror="this.parentElement.style.background='linear-gradient(135deg,#d4a017,#b8860b)';this.parentElement.style.border='none';this.parentElement.style.padding='0';this.outerHTML='<div class=mfr-logo-text style=color:#fff>SUN</div>'">
           </div>
           <div class="mfr-name">Sunoptic Technologies</div>
           <div class="mfr-country" data-en="USA" data-he="ארה״ב">USA</div>
@@ -697,17 +660,9 @@
 
         <!-- Medivision -->
         <div class="mfr-card">
-          <div class="mfr-logo" style="background: linear-gradient(135deg,#2e4b9e,#1e3580);">
-            <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- Monitor screen -->
-              <rect x="6" y="9" width="30" height="21" rx="3" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" fill="none"/>
-              <line x1="14" y1="30" x2="14" y2="36" stroke="rgba(255,255,255,0.7)" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="28" y1="30" x2="28" y2="36" stroke="rgba(255,255,255,0.7)" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="10" y1="36" x2="32" y2="36" stroke="rgba(255,255,255,0.7)" stroke-width="2.5" stroke-linecap="round"/>
-              <!-- ECG line on screen -->
-              <polyline points="9,19 14,19 16,14 18,24 20,19 24,19 26,15 28,23 30,19 33,19"
-                        stroke="rgba(255,255,255,0.9)" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+          <div class="mfr-logo">
+            <img src="https://logo.clearbit.com/medivision.com" alt="Medivision"
+              onerror="this.parentElement.style.background='linear-gradient(135deg,#2e4b9e,#1e3580)';this.parentElement.style.border='none';this.parentElement.style.padding='0';this.outerHTML='<div class=mfr-logo-text style=color:#fff>MV</div>'">
           </div>
           <div class="mfr-name">Medivision</div>
           <div class="mfr-country" data-en="USA" data-he="ארה״ב">USA</div>
@@ -716,16 +671,9 @@
 
         <!-- Life Optic -->
         <div class="mfr-card">
-          <div class="mfr-logo" style="background: linear-gradient(135deg,#148f77,#0e6655);">
-            <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- Binocular / loupe -->
-              <circle cx="14" cy="22" r="7" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" fill="none"/>
-              <circle cx="28" cy="22" r="7" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" fill="none"/>
-              <line x1="21" y1="22" x2="21" y2="22" stroke="rgba(255,255,255,0.9)" stroke-width="3" stroke-linecap="round"/>
-              <line x1="14" y1="15" x2="14" y2="10" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round"/>
-              <line x1="28" y1="15" x2="28" y2="10" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round"/>
-              <line x1="14" y1="10" x2="28" y2="10" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round"/>
-            </svg>
+          <div class="mfr-logo">
+            <img src="https://logo.clearbit.com/life-optic.at" alt="Life Optic"
+              onerror="this.parentElement.style.background='linear-gradient(135deg,#148f77,#0e6655)';this.parentElement.style.border='none';this.parentElement.style.padding='0';this.outerHTML='<div class=mfr-logo-text style=color:#fff>LO</div>'">
           </div>
           <div class="mfr-name">Life Optic</div>
           <div class="mfr-country" data-en="Austria" data-he="אוסטריה">Austria</div>
@@ -734,18 +682,9 @@
 
         <!-- Medicart -->
         <div class="mfr-card">
-          <div class="mfr-logo" style="background: linear-gradient(135deg,#5b2333,#922b45);">
-            <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- Cart / trolley -->
-              <rect x="10" y="10" width="22" height="18" rx="2" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" fill="none"/>
-              <line x1="15" y1="28" x2="15" y2="33" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="27" y1="28" x2="27" y2="33" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round"/>
-              <circle cx="15" cy="35" r="2.5" fill="rgba(255,255,255,0.9)"/>
-              <circle cx="27" cy="35" r="2.5" fill="rgba(255,255,255,0.9)"/>
-              <!-- cross on cart -->
-              <line x1="21" y1="14" x2="21" y2="24" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round"/>
-              <line x1="16" y1="19" x2="26" y2="19" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round"/>
-            </svg>
+          <div class="mfr-logo">
+            <img src="https://logo.clearbit.com/medicart.co.uk" alt="Medicart"
+              onerror="this.parentElement.style.background='linear-gradient(135deg,#5b2333,#922b45)';this.parentElement.style.border='none';this.parentElement.style.padding='0';this.outerHTML='<div class=mfr-logo-text style=color:#fff>MC</div>'">
           </div>
           <div class="mfr-name">Medicart</div>
           <div class="mfr-country" data-en="England" data-he="אנגליה">England</div>
